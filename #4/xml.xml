@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+
+
+<pricelist>
+	<i1>ID</i1>
+	<i2>Наименование</i2>
+	<i3>Цена</i3>
+	<i4>Количество</i4>
+	<fruits>
+		<banan>
+			<id>1</id>
+			<name>Банан</name>
+			<price>3 грн.</price>
+			<amount>20</amount>
+		</banan>
+		<apelsin>
+			<id>2</id>
+			<name>Апельсин</name>
+			<price>6 грн.</price>
+			<amount>8</amount>
+		</apelsin>	
+		<gr>
+			<id>3</id>
+			<name>Груша</name>
+			<price>7 грн.</price>
+			<amount>5</amount>
+		</gr>			
+	</fruits>
+	<vegetables>
+		<pom>
+			<id>4</id>
+			<name>Помидор</name>
+			<price>5 грн.</price>
+			<amount>17</amount>
+		</pom>
+		<og>
+			<id>5</id>
+			<name>Огурец</name>
+			<price>4 грн.</price>
+			<amount>13</amount>
+		</og>	
+		<kap>
+			<id>6</id>
+			<name>Капуста</name>
+			<price>8 грн.</price>
+			<amount>6</amount>
+		</kap>		
+	</vegetables>
+	<milk>
+		<mol>
+			<id>7</id>
+			<name>Молоко</name>
+			<price>10 грн.</price>
+			<amount>5</amount>
+		</mol>	
+		<jog>
+			<id>8</id>
+			<name>Йогурт</name>
+			<price>20 грн.</price>
+			<amount>5</amount>
+		</jog>
+		<kef>
+			<id>9</id>
+			<name>Кефир</name>
+			<price>15 грн.</price>
+			<amount>5</amount>
+		</kef>		
+	</milk>
+</pricelist>

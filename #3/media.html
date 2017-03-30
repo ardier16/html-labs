@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf8"> 
+	<script>
+		   window.onload = function() {
+			var drawingCanvas = document.getElementById('pic');
+			drawingCanvas.height = 500;
+			drawingCanvas.width  = 200;			
+			if(drawingCanvas && drawingCanvas.getContext) {
+				 var context = drawingCanvas.getContext('2d');
+				 // рисуем окружность 
+				 context.strokeStyle = "#000";
+				 context.fillStyle = "#fc0";
+				 context.beginPath();
+				 context.arc(100,100,50,0,Math.PI*2,true);
+				 context.closePath();
+				 context.stroke();
+				 context.fill();
+				 // рисуем левый глаз 
+				 context.fillStyle = "#fff";
+				 context.beginPath();
+				 context.arc(84,90,8,0,Math.PI*2,true);
+				 context.fillStyle = "black";
+				 context.closePath();
+				 context.stroke();
+				 context.fill();
+				 
+				 context.beginPath();
+				 context.arc(84,93,4,0,Math.PI*2,true);
+				 context.fillStyle = "blue";
+				 context.closePath();
+				 context.stroke();
+				 context.fill();			 
+				 // рисуем правый глаз 
+				 context.beginPath();
+				 context.arc(116,90,8,0,Math.PI*2,true);
+				 context.fillStyle = "black";
+				 context.closePath();
+				 context.stroke();
+				 context.fill();
+				 
+				 context.beginPath();
+				 context.arc(114,93,4,0,Math.PI*2,true);
+				 context.fillStyle = "blue";
+				 context.closePath();
+				 context.stroke();
+				 context.fill();
+				 // рисуем рот
+				 context.beginPath();
+				 context.moveTo(70,115);
+				 context.fillStyle = "red";
+				 context.quadraticCurveTo(100,140,130,115);
+				 context.quadraticCurveTo(100,160,70,115); 
+				 context.closePath();
+				 context.stroke();
+				 context.fill();
+									
+				 // рисуем ноги
+				 context.beginPath();
+				 context.moveTo(100, 250);
+				 context.lineTo(100, 150);
+				 context.stroke();
+				 
+				 context.beginPath();
+				 context.moveTo(50, 300);
+				 context.lineTo(100, 250);
+				 context.stroke();
+				// рисуем руки
+				 context.beginPath();
+				 context.moveTo(150, 300);
+				 context.lineTo(100, 250);
+				 context.stroke();			 
+				 
+				 context.beginPath();
+				 context.moveTo(50, 200);
+				 context.lineTo(150, 200);
+				 context.stroke();
+			 
+				 context.translate(100, 200)			
+
+				 context.fillStyle = "grey";
+				 context.beginPath();
+				 context.arc(60,60,35,0,Math.PI*2,true);
+				 context.closePath();
+				 context.stroke();
+				 context.fill();	
+			}
+		   }
+
+		function play(){
+			var pl = document.getElementById("audio");
+			pl.play();
+		}	
+		function pause(){
+			var ps = document.getElementById("audio");
+			ps.pause();
+		}
+		function currentTime(){
+			var time = document.getElementById("audio");
+			var res = document.getElementById("pos");
+			time.currentTime = res.value;
+		}
+		function volume(){
+			var audio = document.getElementById("audio");
+			var vol = document.getElementById("vol");
+			audio.volume = vol.value;
+		}
+		function playVid(){
+			var pl = document.getElementById("video");
+			pl.play();
+		}
+		function pauseVid(){
+			var ps = document.getElementById("video");
+			ps.pause();
+		}
+		function currentTimeVid(){
+			var time = document.getElementById("video");
+			var res = document.getElementById("posV");
+			time.currentTime = res.value;
+		}
+		function volumeVid(){
+			var vid = document.getElementById("video");
+			var vol = document.getElementById("volV");
+			vid.volume = vol.value;
+		}		
+	</script>
+</head>
+<body style="text-align: center; background: #c0c0c0">
+	<h1> AUDIO </h1>
+	<p><h2>The Beatles - Let It Be</h2></p>
+	<audio id="audio" controls src="1.mp3"onmouseover="playVid()" onmouseout="pauseVid()">	Ваш браузер не поддерживает аудио.
+	</audio>	
+	<p> <input type="button" value="Play" onclick="play()">
+		<input type="button" value="Pause" onclick="pause()">
+		Позиция<input type="range" id="pos" onchange="currentTime()" min="0" max="243" step="5">
+		Громкость<input type="range" id="vol" min="0" max="1" step="0.01" onclick="volume()">
+	</p>
+	<p><h1> VIDEO </h1></p>
+	<p><h2>Маша и Медведь</h2></p>
+	<p><video style="margin-top: 10px" id="video" width="800" height="450" poster="1.jpg" controls src="https://ivi-f38-vcp.cdnvideo.ru/contents/0/5/c249e90c04834a80889fc75bbbeabc.mp4">
+		Ваш браузер не поддерживает видео.
+	</video></p>
+		<p> <input type="button" value="Play" onclick="playVid()">
+		<input type="button" value="Pause" onclick="pauseVid()">
+		Позиция<input type="range" id="posV" onchange="currentTimeVid()" min="0" max="570" step="10">
+		Громкость<input type="range" id="volV" min="0" max="1" step="0.01" onclick="volumeVid()">
+	</p>
+	<h1> CANVAS </h1>
+	<canvas id="pic" width="200" height="500">
+		Ваш браузер не поддерживает Canvas.
+	</canvas>
+</form>	
+</body>

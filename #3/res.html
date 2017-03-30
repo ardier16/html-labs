@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<script>
+		function start()
+		{
+			if(navigator.geolocation)
+			{
+				navigator.geolocation.getCurrentPosition(UpdateLocation)
+			}
+			else
+			{
+				alert('Ваш браузер не поддерживает Geolocation API!');
+			}
+		}
+		
+		function UpdateLocation(position)
+		{
+			alert("Ваша широта: " + position.coords.latitude + "; " + "ваша долгота: " + position.coords.longitude);
+		}
+		
+
+	</script>
+</head>
+<body>
+<form style="text-align:center; font-size:14pt; font-family: Verdana">
+	<h2>Небольшой опросик</h2>
+	<p>Введите дату своего рождения &nbsp<input type="date"></p>
+	<p>Введите свою любимую дату в часовом поясе UTC &nbsp<input type="datetime"></p>
+	<p>Введите сегодняшнюю дату без часового пояса &nbsp<input type="datetime-local"></p>
+	<p>Введите точное значение текущего времени &nbsp<input type="time"></p>
+	<p>Введите дату окончания школы &nbsp<input type="month"></p>
+	<p>Введите номер текущей недели &nbsp<input type="week"></p>
+	<p>Выберите свой любимый цвет &nbsp<input type="color"></p>
+	<p>Введите номер своего телефона &nbsp<input type="tel"></p>
+	<p>Введите своё любимое число &nbsp<input type="number"></p>
+	<p>Сколько времени вы проводите за компьютером ежедневно (мало/средне/много) &nbsp </p>
+	<p><input type="range"></p>
+	<p><input type="button" value="Получить геоданные" onclick="start()"></p>
+</form>	
+</body>
+</html>
