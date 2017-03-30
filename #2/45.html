@@ -1,0 +1,79 @@
+﻿<html>
+<head>
+<meta charset="utf-8"> 
+<script type="text/javascript">
+
+var SnowAll = Number(prompt("Количество снежинок", "200")); // максимальное количество снежинок
+var SnowColor = "white"; // цвет снежинок
+var SnowFont = new Array("Arial Black","Arial Narrow","Times","Comic Sans MS"); // шрифты снежинок
+var SnowLetter = "*"; // символ снежинки
+
+var SnowSpeed = Number(prompt("Скорость снежинок", "2"));; //скорость 
+
+var SnowMaxSize=30; //максимальный размер снежинок
+
+var SnowMinSize=8; //минимальный размер снежинок
+
+var Snow=new Array(); // снежинки
+var marginbottom = "900"; // высота
+var marginright = "1470"; // ширина
+var LeftRight=new Array(); // амплитуда ухода влево-вправо
+
+var X_Move=new Array(); // число-перемещение по Х
+var Coordinates=new Array(); // координата для движения влево-вправо
+
+function rand(range) {    
+	return Math.floor(range*Math.random());
+}
+
+function startSnow() {
+	
+    var Snowsizerange=SnowMaxSize-SnowMinSize;
+    for (i=0;i<=SnowAll;i++) {
+		Coordinates[i] = 0;      
+		LeftRight[i] = Math.random()*15;      
+		X_Move[i] = 0.02 + Math.random()/10;
+		
+		Snow[i]=document.getElementById("s"+i);
+		Snow[i].style.fontFamily=SnowFont[rand(SnowFont.length)];
+		Snow[i].size=rand(Snowsizerange)+SnowMinSize;
+		Snow[i].style.fontSize=Snow[i].size;
+		Snow[i].style.color=SnowColor;
+		Snow[i].sink=SnowSpeed*Snow[i].size/5;
+		Snow[i].posx= rand(marginright-Snow[i].size)+90;
+		Snow[i].posy=rand(marginbottom-2*Snow[i].size);
+		Snow[i].style.left=Snow[i].posx;
+		Snow[i].style.top=Snow[i].posy;
+	  }
+    moveSnow();
+}
+
+function moveSnow() {
+  for (i=0;i<=SnowAll;i++) {
+    Coordinates[i] += X_Move[i];
+    Snow[i].posy+=Snow[i].sink;
+    Snow[i].style.left=Snow[i].posx+LeftRight[i]*Math.sin(Coordinates[i]);
+    Snow[i].style.top=Snow[i].posy;
+    if (Snow[i].posy>=marginbottom-2*Snow[i].size || parseInt(Snow[i].style.left)>(marginright-3*LeftRight[i])) {
+      Snow[i].posx=rand(marginright-Snow[i].size)+90;
+      Snow[i].posy=0;
+    }
+  }
+   setTimeout("moveSnow()",50);
+}
+
+
+for (i=0;i<=SnowAll;i++) {
+  document.write("<span id='s"+i+"' style='position:absolute;top:-"+SnowMaxSize+"'>"+SnowLetter+"</span>")
+}
+</script>
+</head>
+<body onLoad = "startSnow()" style="background: black; background-image: url(1.jpg)">
+	<p><h2 style = "text-align: center; color: yellow"><br>Let it snow, let it snow, let it snow... Winter is coming :)</h2></p>
+	<audio autoplay>
+		<source src="music.mp3" type="audio/mpeg">
+			Тег audio не поддерживается вашим браузером. 
+  </audio>
+
+</body>
+</html>

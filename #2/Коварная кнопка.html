@@ -1,0 +1,33 @@
+﻿<html>
+<head>
+<script language="JavaScript">
+
+function hiddenE() {
+	document.getElementById("hid").style.visibility = "hidden"
+}
+
+function show() {
+	document.getElementById("hid").style.visibility = "visible"
+}
+
+function showTxt() {
+	document.getElementById("txt").style.visibility = "visible"
+}
+</script>
+</head>
+
+<body>
+<table width="90%" border="1" cellspacing="0" cellpadding="4" bordercolor="#666666" align="center">
+<tr>
+<td width="20%" align="center"><input type="button" value="Не наводите курсор и ни в коем случае не нажимайте эту кнопку!!" onMouseOver="show()" onMouseOut="hiddenE()" onClick="showTxt()"></td>
+<td>
+<div id="hid" style="position: relative; visibility: hidden">Всё, что вы видите сейчас - это всего лишь иллюзия. Только вы контролируете её появление. Оглянитесь вокруг - может быть, окружающий мир - это тоже не более, чем плод вашей фантазии? Как вам такое развитие событий?</div>
+</td></tr></table>
+<br>
+<div id="txt" style="margin-top: 50px; visibility: hidden">
+	<h1><center> Ну и зачем вы это сделали?</center></h1>
+	<br>
+	<p><center>Увы, ничего страшного не произошло. Но помните, любопытство до добра не доводит!</center></p>
+</div>
+</body>
+</html>

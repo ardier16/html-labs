@@ -1,0 +1,134 @@
+﻿body {     
+       background-image:url(../images/bg.jpg);
+       background-repeat:repeat;
+       background-attachment:scroll;
+       margin:0px;
+       
+}
+#header {
+    margin-left:15px;
+    margin-top:0px;
+    background-image:url(../images/bg.jpg);
+    height:1200px;
+    width:auto;
+    vertical-align:top;
+    font-family:'Century Gothic';
+    font-size:20pt;
+    text-align:center;
+   
+}
+
+#empty
+{
+    margin-left:10px;
+    background-image:url(../images/bg.jpg);
+    margin-top:0px;
+    width:99%;
+    height:1%;
+}
+
+#cont{
+    margin-left: 400px;
+    margin-top: -623px;
+    width:70%;
+    height:85%;
+    border:dashed;
+    background: rgba(243, 190, 7, 0.38);
+}
+
+#cont1 {
+    margin-left:10px;
+    margin-top:20px;
+    background-image:url(../images/bg.jpg);
+    width:99%;
+    height:145px;
+    margin:0px;
+}
+
+#menu {
+    margin-left:10px;
+    margin-top:60px;
+    background: rgba(206, 194, 152, 0.43);
+    width:320px;
+    height:300px;
+    border-color:black;
+    border:dotted;
+    text-align:left;
+}
+
+#cont3 {
+    margin-left:10px;
+    margin-top:60px;
+    background: rgba(206, 194, 152, 0.43);
+    width:320px;
+    height:250px;
+    border:dashed;
+}
+
+#content {
+    margin-left:20px;
+    margin-top:20px;
+    width:90%;
+    height:80%;
+    font-family:Verdana;
+    font-size:19px;
+    text-align:left;
+
+}
+#footer
+{
+    margin-left:0px;
+    margin-bottom:0px;
+    width:100%;
+    height:100px;
+    font-family:'Century Gothic';
+    font-size:16pt;
+    text-align:center;
+    color:#1f1e1e;
+}
+#vlink{
+    color:#1f1e1e;
+}
+
+#bvbimage1{
+    margin-left:0px;
+    margin-top:20px;
+    width:145px;
+    height:120px;
+}
+
+#bvbimage2{
+    float:right;
+    margin-top:-140px;
+    width:145px;
+    height:145px;
+}
+
+#title{
+    margin-left:150px;
+    margin-top:-100px;
+    width:78%;
+    height:120px;
+	text-decoration:underline;
+    font-size:44px;
+    
+}
+
+.rightimg  {
+    float: right; 
+    margin: 7px 0 7px 7px;
+}
+.leftimg  {
+    float: left; 
+    margin: 0px 10px 0px 0px;
+}
+.tr{
+	width:100%;
+	background:rgba(224, 177, 16, 0.84);
+}
+   
+ 
+li{
+	list-style: circle;
+}
+ 

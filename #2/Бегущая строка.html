@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Бегущая строка</title>
+</head>
+<body>
+<center><img src="111.jpg"></center>
+<center><form name="posl"><input type="text" size=50 name="forma">
+</form></center>
+<script language="JavaScript">
+var line="My name is Darth Vader. I came down from planet Vulcan.";
+var speed=200; var i=0;function m_line() { 
+if(i++<line.length)
+{
+document.posl.forma.value=line.substring(0,i);
+}
+else {
+
+document.posl.forma.value=" ";
+i=0;
+} 
+
+setTimeout("m_line()",speed);
+}
+
+m_line();
+</script>
+
+</body>
+</html>
