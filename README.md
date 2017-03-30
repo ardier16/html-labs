@@ -5,6 +5,6 @@ Laboratory works from the Hypertext and Hypermedia course (1st year university)
 
 #2 - JavaScript tricks - snowfall, autofilled text, form checking, text hiding
 
-#3 - HTML5 elements - audio, video, canvas
+#3 - HTML5 elements - audio, video, canvas, new inputs, mark-up elements
 
 #4 - Using XML via JavaScript
